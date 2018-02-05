@@ -1,7 +1,7 @@
 <?php
 
 // Path to your craft/ folder
-$craftPath = 'C:/wamp64/www/softwareIntegration/craft';     
+$craftPath = '../craft';     
 
 // Do not edit below this line
 $path = rtrim($craftPath, '/').'/app/index.php';

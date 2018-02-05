@@ -1,0 +1,35 @@
+header {
+  background-color: rgb(60, 179, 113);
+  width: 20%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+}
+header ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+header li {
+  margin-top: 1em;
+  border-bottom: 1px lightgray;
+}
+header li a {
+  text-decoration: none;
+  display: block;
+  color: white;
+}
+
+header li a:visited {
+  color: white;
+}
+
+header li a:hover {
+  background-color: white;
+  color: rgb(60, 179, 113);
+  transition: 1;
+}
