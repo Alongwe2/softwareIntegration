@@ -1,0 +1,28 @@
+{% extends "_layout" %}
+
+{% block content %}
+
+<h1>{{ entry.title }}</h1>
+<div class="ratings">
+  <div class="ratings__left">
+    <h2>Rate a Restaurant</h2>
+    <form class="ratings__form">
+      <input class="ratings__text__small" type="text" placeholder="Restaurant Name"></input>
+      <p>Rate this Restaurant out of 5</p>
+      <select class="ratings__select">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+      <p>Add any additional comments here:</p>
+      <input class="ratings__text__large" type="text"></input>
+      <input type="submit"/>
+    </form>
+  </div>
+  <div class="ratings__right">
+    <h2>View Previous Ratings</h2>
+  </div>
+</div>
+{% endblock %}

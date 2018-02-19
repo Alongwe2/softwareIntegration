@@ -1,5 +1,17 @@
 {% extends "_layout" %}
 
 {% block content %}
+<h1>{{ entry.title }}</h1>
+  <a class="button"href="http://localhost/softwareintegration/public/ratings">Ratings</a>
 
+
+<h2>Edit Account Information</h2>
+<a class="button" href="#">Change My Password</a>
+<div class="change__password">
+  <form class="change__form">
+    <p> enter old password </p>
+    <p> enter new password </p>
+    <input type="submit"/>
+  </form>
+</div>
 {% endblock %}

@@ -1,3 +1,4 @@
+/* global elements */
 body {
   font-family: sans-serif;
   margin: 0;
@@ -7,10 +8,70 @@ main {
   position: relative;
   margin-left: 25%;
 }
+p {
+  font-weight: normal;
+  font-size: .75em;
+}
+.button {
+  background-color: rgb(60, 179, 113);
+  text-decoration: none;
+  color: white;
+  border-radius: 5px;
+  margin:1em;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-bottom: .5em;
+  padding-top: .5em;
+}
 
 @media only screen and (min-width: 500px) {
   main {
     margin-left: 2em;
     margin-right: 2em;
+  }
+}
+/* My Account */
+.change__password {
+  display: none;
+}
+.account__links {
+  margin: 2em;
+}
+/* Ratings */
+
+.ratings__left {
+  width: 100%;
+  text-align: center;
+}
+.ratings__right {
+  width: 100%;
+  text-align: center;
+}
+.ratings__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.ratings__text__small {
+  width: 20%;
+}
+.ratings__select {
+  width: 50px;
+}
+.ratings {
+  display: flex;
+  flex-direction: column;
+}
+.ratings__text__large {
+  width: 30%;
+  height: 100px;
+  margin-bottom: 1em;
+}
+@media only screen and (min-width: 500px) {
+  .ratings__left .ratings__right {
+    width: 50%;
+  }
+  .ratings {
+    flex-direction: row;
   }
 }

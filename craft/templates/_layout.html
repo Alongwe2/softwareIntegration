@@ -21,6 +21,7 @@
 <body>
 		<header>
       {{ craft.amNav.getNav("primary") }}
+      <ul>
         {% for node in nav %}
           <li class="header__nav__item"><a class="header__nav__link" href="{{node.url}}" alt="{{node.name}}"></a></li>
         {% endfor %}

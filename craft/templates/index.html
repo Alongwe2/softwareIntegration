@@ -24,10 +24,9 @@
 
 	{{ entry.body }}
 
-	<h2>Recent News</h2>
-	<ul>
-		{% for entry in craft.entries.section('news').limit(5).find() %}
-			<li><a href="{{ entry.url }}">{{ entry.title }}</a></li>
-		{% endfor %}
-	</ul>
+	<h2>My Recommentations</h2>
+  {% for entry in craft.entries.section('restaurants') %}
+    <h2><a href="{{ entry.url }}">{{ entry.title }}</a><h2>
+    <p>{{ entry.body }}</p>
+  {% endfor %}
 {% endblock %}
