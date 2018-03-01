@@ -2,11 +2,21 @@
 
 {% block content %}
 
+
 <h1>{{ entry.title }}</h1>
 <p>{{ entry.body }}</p>
 {% for row in entry.hoursOfOperation %}
   <h4>{{ row.days }}</h4>
   <p>{{ row.hours }}</p>
+{% endfor %}
+
+
+{% for option in entry.specials %}
+ <p> {{ option.dayOfTheWeek }}</p>
+{% endfor %}
+
+{% for block in entry.specials %}
+<h3>{{ block.specials }}</h3>
 {% endfor %}
 
 <a class="button"href="http://localhost/softwareintegration/public/ratings">Ratings</a>
