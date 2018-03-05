@@ -26,7 +26,17 @@ button {
 button:hover {
     opacity: 0.8;
 }
+.login {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+@media only screen and (min-width: 700px) {
+  .login {
+    flex-direction: row;
 
+  }
+}
 /* Extra styles for the cancel button */
 .cancelbtn {
     width: auto;

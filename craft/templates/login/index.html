@@ -1,95 +1,77 @@
 {% extends "_layout" %}
 
 {% block content %}
-<div class="login">
-  <div class="login__div>">
-    <h1>Login</h1>
+{% if craft.session.isLoggedIn == false %}
+  <div class="login">
+    <div class="login__div>">
+      <h1>Login</h1>
 
-    <form method="post" accept-charset="UTF-8">
-      {{ getCsrfInput() }}
-      <input type="hidden" name="action" value="users/login">
-
-      <h3><label for="loginName">Username or email</label></h3>
-      <input id="loginName" type="text" name="loginName"
-          value="{{ craft.session.rememberedUsername }}">
-
-      <h3><label for="password">Password</label></h3>
-      <input id="password" type="password" name="password">
-
-      <label>
-          <input type="checkbox" name="rememberMe" value="1">
-          Remember me
-      </label>
-
-      <input type="submit" value="Login">
-
-      {% if errorMessage is defined %}
-          <p>{{ errorMessage }}</p>
-      {% endif %}
-    </form>
-  </div>
-  <div class="login_div">
-    <h1>Create New Account</h1>
-    <form method="post" accept-charset="UTF-8">
+      <form method="post" accept-charset="UTF-8">
         {{ getCsrfInput() }}
-        <input type="hidden" name="action" value="users/saveUser">
-        <input type="hidden" name="redirect" value="">
+        <input type="hidden" name="action" value="users/login">
 
-        {% macro errorList(errors) %}
-            {% if errors %}
-                <ul class="errors">
-                    {% for error in errors %}
-                        <li>{{ error }}</li>
-                    {% endfor %}
-                </ul>
-            {% endif %}
-        {% endmacro %}
-
-        {% from _self import errorList %}
-
-        <h3><label for="username">Username</label></h3>
-        <input id="username" type="text" name="username"
-            {%- if account is defined %} value="{{ account.username }}"{% endif -%}>
-
-        {% if account is defined %}
-            {{ errorList(account.getErrors('username')) }}
-        {% endif %}
-
-        <h3><label for="email">Email</label></h3>
-        <input id="email" type="text" name="email"
-            {%- if account is defined %} value="{{ account.email }}"{% endif %}>
-
-        {% if account is defined %}
-            {{ errorList(account.getErrors('email')) }}
-        {% endif %}
+        <h3><label for="loginName">Username or email</label></h3>
+        <input id="loginName" type="text" name="loginName"
+            value="{{ craft.session.rememberedUsername }}">
 
         <h3><label for="password">Password</label></h3>
         <input id="password" type="password" name="password">
 
-        {% if account is defined %}
-            {{ errorList(account.getErrors('password')) }}
+
+        <input class="button" type="submit" value="Login">
+
+        {% if errorMessage is defined %}
+            <p>{{ errorMessage }}</p>
         {% endif %}
+      </form>
+    </div>
+    <div class="login_div">
+      <h1>Create New Account</h1>
+      <form method="post" accept-charset="UTF-8">
+          {{ getCsrfInput() }}
+          <input type="hidden" name="action" value="users/saveUser">
+          <input type="hidden" name="redirect" value="">
 
-        <input class="button" type="submit" value="Register">
-    </form>
+          {% macro errorList(errors) %}
+              {% if errors %}
+                  <ul class="errors">
+                      {% for error in errors %}
+                          <li>{{ error }}</li>
+                      {% endfor %}
+                  </ul>
+              {% endif %}
+          {% endmacro %}
+
+          {% from _self import errorList %}
+
+          <h3><label for="username">Username</label></h3>
+          <input id="username" type="text" name="username"
+              {%- if account is defined %} value="{{ account.username }}"{% endif -%}>
+
+          {% if account is defined %}
+              {{ errorList(account.getErrors('username')) }}
+          {% endif %}
+
+          <h3><label for="email">Email</label></h3>
+          <input id="email" type="text" name="email"
+              {%- if account is defined %} value="{{ account.email }}"{% endif %}>
+
+          {% if account is defined %}
+              {{ errorList(account.getErrors('email')) }}
+          {% endif %}
+
+          <h3><label for="password">Password</label></h3>
+          <input id="password" type="password" name="password">
+
+          {% if account is defined %}
+              {{ errorList(account.getErrors('password')) }}
+          {% endif %}
+
+          <input class="button" type="submit" value="Register">
+      </form>
+    </div>
   </div>
-</div>
-
-<style>
-
-  .login__div {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    margin-left: 1em;
-    margin-right: 1em;
-  }
-  .login {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-  }
-
-</style>
-
+{% else %}
+  <p>You are currently logged in as <b>{{ currentUser.username }}</b></p>
+{% endif %}
 {% endblock %}
