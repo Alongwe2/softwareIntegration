@@ -4,6 +4,29 @@
 <div class="login">
   <div class="login__div>">
     <h1>Login</h1>
+
+    <form method="post" accept-charset="UTF-8">
+      {{ getCsrfInput() }}
+      <input type="hidden" name="action" value="users/login">
+
+      <h3><label for="loginName">Username or email</label></h3>
+      <input id="loginName" type="text" name="loginName"
+          value="{{ craft.session.rememberedUsername }}">
+
+      <h3><label for="password">Password</label></h3>
+      <input id="password" type="password" name="password">
+
+      <label>
+          <input type="checkbox" name="rememberMe" value="1">
+          Remember me
+      </label>
+
+      <input type="submit" value="Login">
+
+      {% if errorMessage is defined %}
+          <p>{{ errorMessage }}</p>
+      {% endif %}
+    </form>
   </div>
   <div class="login_div">
     <h1>Create New Account</h1>
@@ -51,9 +74,6 @@
     </form>
   </div>
 </div>
-<footer>
-  <link rel="stylesheet" href="../style.css">
-</footer>
 
 <style>
 

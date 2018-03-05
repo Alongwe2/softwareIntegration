@@ -27,7 +27,11 @@
         {% endfor %}
       </ul>
 		</header>
-
+    <div class="login__check">
+      {% if currentUser %}
+        <p>Logged in as {{currentUser.username}}</p>
+      {% endif %}
+    </div>
 		<main role="main">
 			{% block content %}
 				<p>If you see me, you haven’t set your <code>{% verbatim %}{% block content %}…{% endblock %}{% endverbatim %}</code> yet.</p>
@@ -35,8 +39,13 @@
 			{% endblock %}
 		</main>
 
+    {% if craft.session.isLoggedIn %}
+      <a href="{{ logoutUrl }}">Logout</a>
+    {% endif %}
+    
 		<footer>
       <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="../style.css">
 		</footer>
 </body>
 </html>
