@@ -27,23 +27,23 @@
         {% endfor %}
       </ul>
 		</header>
-    <div class="login__check">
-      {% if currentUser %}
-        <p>Logged in as {{currentUser.username}}</p>
-      {% endif %}
-    </div>
 		<main role="main">
+      <div class="login__check">
+        {% if currentUser %}
+          <p>Logged in as <b>{{currentUser.username}}</b></p>
+        {% endif %}
+      </div>
 			{% block content %}
 				<p>If you see me, you haven’t set your <code>{% verbatim %}{% block content %}…{% endblock %}{% endverbatim %}</code> yet.</p>
 				<p>See Twig’s <a href="http://twig.sensiolabs.org/doc/templates.html#template-inheritance">Template Inheritance</a> documentation for an explanation.</p>
 			{% endblock %}
+      {% if craft.session.isLoggedIn %}
+        <a class="button" href="{{ logoutUrl }}">Logout</a>
+      {% endif %}
 		</main>
 
-    {% if craft.session.isLoggedIn %}
-      <a href="{{ logoutUrl }}">Logout</a>
-    {% endif %}
-    
 		<footer>
+      <h1>{{site.title}}</h1>
       <link rel="stylesheet" href="style.css">
       <link rel="stylesheet" href="../style.css">
 		</footer>
