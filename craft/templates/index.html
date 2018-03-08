@@ -24,9 +24,17 @@
 
 	{{ entry.body }}
 
-	<h2>My Recommentations</h2>
+  <div>
+  <input type="text" placeholder="Search All Restaurants.." name="search">
+  <button type="submit">Submit</button>
+  </div>
+
+  <h2>Restaurants in Kent, Ohio</h2>
   {% for entry in craft.entries.section('restaurants') %}
-    <h2><a href="{{ entry.url }}">{{ entry.title }}</a><h2>
-    <p>{{ entry.body }}</p>
+    <li><a href="{{ entry.url }}">{{ entry.title }}</a></li>
+  {% endfor %}
+  {% for entry in craft.entries.section('news') %}
+    <h2><a href="{{ entry.url }}">{{ entry.title }}</a></h2>
+    <p>{{entry.body}}</p>
   {% endfor %}
 {% endblock %}
