@@ -19,6 +19,28 @@
 <h3>{{ block.specials }}</h3>
 {% endfor %}
 
+  <form method="post" accept-charset="UTF-8">
+      {{ getCsrfInput() }}
+      <input type="hidden" name="action" value="entries/saveEntry">
+      <input type="hidden" name="redirect" value="viewentry/{slug}">
+      <input type="hidden" name="sectionId" value="userRatings">
+      <input type="hidden" name="enabled" value="1">
+
+      <input type="text" id="user" name="ratings" value="{{currentUser}}" style="display:none;" readonly>
+
+      <input type="text" id="restaurant" name="restaurant" value="{{entry.id}}" style="display:none;" readonly>
+
+      <label for="ratings">Rate This Restaurant</label>
+      <select id="ratings" name="ratings">
+          {% for option in entry.ratings.options %}
+            <option value="{{ option.value }}">{{option.label}}</option>
+          {% endfor %}
+      </select>
+
+    <input class="button" type="submit" value="Rate">
+  </form>
+
+
 <a class="button"href="http://localhost/softwareintegration/public/ratings">Ratings</a>
 
 {% endblock %}

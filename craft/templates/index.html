@@ -24,9 +24,11 @@
 
 	{{ entry.body }}
 
-  <div>
-  <input type="text" placeholder="Search All Restaurants.." name="search">
-  <button type="submit">Submit</button>
+  <div class="search__form">
+    <form class="search" action="{{ url('find/results.html') }}">
+        <input class="search__input search__text" type="search" name="q" placeholder="Search">
+        <input class="search__input search__submit" type="submit" value="Go">
+    </form>
   </div>
 
   <h2>Restaurants in Kent, Ohio</h2>

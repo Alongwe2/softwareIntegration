@@ -12,6 +12,13 @@ input[type=text], input[type=password] {
     box-sizing: border-box;
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
 /* Set a style for all buttons */
 button {
     background-color: #4CAF50;
@@ -129,4 +136,20 @@ span.psw {
     .cancelbtn {
        width: 100%;
     }
+}
+
+/* Search Form */
+.search {
+
+}
+.search__input {
+  margin-top: 1em;
+}
+.search__text {
+  width: 25%;
+  border-radius: 8px;
+}
+.search__submit {
+  width: 50px;
+  
 }

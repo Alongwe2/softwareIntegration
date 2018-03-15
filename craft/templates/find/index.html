@@ -3,9 +3,11 @@
 {% block content %}
 <h1>{{ entry.title }}</h1>
 
-<div>
-<input type="text" placeholder="Search All Restaurants.." name="search">
-<button type="submit">Submit</button>
+<div class="search__form">
+  <form class="search" action="{{ url('find/results.html') }}">
+      <input class="search__input search__text" type="search" name="q" placeholder="Search">
+      <input class="search__input search__submit" type="submit" value="Go">
+  </form>
 </div>
 <div><h1>Can't decide? Let us pick for you!</h1><button id="Generate">Okay!</button></div>
 <div><output id="r`eccomendation" hidden></output></div>
