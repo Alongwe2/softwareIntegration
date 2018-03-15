@@ -22,6 +22,18 @@
   <script src="../../js/main.js"></script>
 </head>
 
+<script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+}
+</script>
+
 <body>
 		<header>
       {{ craft.amNav.getNav("primary") }}
@@ -31,6 +43,7 @@
         {% endfor %}
       </ul>
 		</header>
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
 		<main role="main">
       <div class="login__check">
         {% if currentUser %}
@@ -47,7 +60,9 @@
 		</main>
 
 		<footer>
-      <h1>{{site.title}}</h1>
+      <h2>{{siteName}}</h2>
+      <p>Have any questions? Check our our <a href="http://localhost/softwareintegration/public/faq">FAQ Page.</a></p>
+
       <link rel="stylesheet" href="style.css">
       <link rel="stylesheet" href="../style.css">
 		</footer>

@@ -1,0 +1,23 @@
+{% extends "_layout" %}
+
+{% block content %}
+
+<h1>Search Results</h1>
+
+{% set query = craft.request.getParam('categories') %}
+{% set entries = craft.entries.section('restaurants').search(query).order('score') %}
+
+{% if entries|length %}
+    <p>{{ entries|length }} results for "{{query}}"</p>
+
+    <ul>
+        <h2>Restaurants</h2>
+        {% for entry in entries %}
+            <li><a href="{{ entry.url }}">{{ entry.title }}</a></li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>Your search for “{{ query }}” didn’t return any results.</p>
+{% endif %}
+
+{% endblock %}

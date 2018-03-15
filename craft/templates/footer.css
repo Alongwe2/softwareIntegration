@@ -4,5 +4,15 @@ footer {
   bottom: 0;
   right: 0;
   left: 0;
-  background-color: rgb(60, 179, 113);
+  background-color: black;
+  color: white;
+  position: absolute;
+  text-align: center;
+  display:none;
+}
+footer a {
+  color: white;
+}
+footer a:visited {
+  color: white;
 }
