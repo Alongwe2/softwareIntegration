@@ -1,3 +1,4 @@
+
 /* global elements */
 body {
   font-family: sans-serif;
@@ -11,6 +12,11 @@ main {
 p {
   font-weight: normal;
   font-size: .75em;
+}
+h1 {
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 1em;
 }
 .button {
   background-color: rgb(60, 179, 113);

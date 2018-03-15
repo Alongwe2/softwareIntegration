@@ -1,4 +1,15 @@
-/* -------------------------------- 
+/* colors */
+
+$color-1: #4e5359; // blue dark
+$color-2: #a9c056; // green
+$color-3: #f3f3f5; // grey light
+$color-4: #6c7d8e; // blue light
+$color-5: #ffffff; // white
+
+/* fonts */
+
+$primary-font: 'Open Sans', sans-serif;
+/* --------------------------------
 
 Primary style
 
@@ -51,9 +62,9 @@ a {
   text-decoration: none;
 }
 
-/* -------------------------------- 
+/* --------------------------------
 
-Main components 
+Main components
 
 -------------------------------- */
 header {
@@ -449,5 +460,71 @@ header h1 {
   }
   .no-js .cd-faq-content {
     display: block;
+  }
+}
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, main {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+// breakpoints
+
+$S:     480px;
+$M:     768px;
+$L:     1024px;
+
+// media queries
+
+@mixin MQ($canvas) {
+  @if $canvas == S {
+   @media only screen and (min-width: $S) { @content; }
+  }
+  @else if $canvas == M {
+   @media only screen and (min-width: $M) { @content; }
+  }
+  @else if $canvas == L {
+   @media only screen and (min-width: $L) { @content; }
   }
 }
