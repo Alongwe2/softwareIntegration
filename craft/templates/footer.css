@@ -8,7 +8,8 @@ footer {
   color: white;
   position: absolute;
   text-align: center;
-  display:none;
+  transition: .5s;
+  display: none;
 }
 footer a {
   color: white;

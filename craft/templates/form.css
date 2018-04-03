@@ -149,7 +149,11 @@ span.psw {
   width: 25%;
   border-radius: 8px;
 }
+@media screen and (max-width: 500px) {
+  .search__text {
+    width: 75%;
+  }
+}
 .search__submit {
   width: 50px;
-  
 }
