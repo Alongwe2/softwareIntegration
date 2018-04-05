@@ -21,13 +21,15 @@ form {
 }
 /* Set a style for all buttons */
 button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
+  background-color: rgb(60, 179, 113);
+  text-decoration: none;
+  color: white;
+  border-radius: 5px;
+  margin:1em;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-bottom: .5em;
+  padding-top: .5em;
 }
 
 button:hover {

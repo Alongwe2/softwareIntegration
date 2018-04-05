@@ -6,10 +6,10 @@ footer {
   left: 0;
   background-color: black;
   color: white;
-  position: absolute;
+  position: fixed;
   text-align: center;
   transition: .5s;
-  display: none;
+  margin-top: 1em;
 }
 footer a {
   color: white;
