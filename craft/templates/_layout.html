@@ -53,16 +53,16 @@
 		<main id="main" role="main">
       <span class="openbtn" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
 
+			{% block content %}
+				<p>If you see me, you haven’t set your <code>{% verbatim %}{% block content %}…{% endblock %}{% endverbatim %}</code> yet.</p>
+				<p>See Twig’s <a href="http://twig.sensiolabs.org/doc/templates.html#template-inheritance">Template Inheritance</a> documentation for an explanation.</p>
+			{% endblock %}
+      
       <div class="login__check">
         {% if currentUser %}
           <p>Logged in as <b>{{currentUser.username}}</b></p>
         {% endif %}
       </div>
-
-			{% block content %}
-				<p>If you see me, you haven’t set your <code>{% verbatim %}{% block content %}…{% endblock %}{% endverbatim %}</code> yet.</p>
-				<p>See Twig’s <a href="http://twig.sensiolabs.org/doc/templates.html#template-inheritance">Template Inheritance</a> documentation for an explanation.</p>
-			{% endblock %}
 
       {% if craft.session.isLoggedIn %}
         <a class="button" href="{{ logoutUrl }}">Logout</a>

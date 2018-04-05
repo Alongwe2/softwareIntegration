@@ -20,24 +20,26 @@
 {% extends "_layout" %}
 
 {% block content %}
-	<h1>{{ entry.title }}</h1>
+  <div class="home__top">
+  	<h1>{{ entry.title }}</h1>
 
-	{{ entry.body }}
-
-  <div class="search__form">
-    <form class="search" action="{{ url('find/results.html') }}">
-        <input class="search__input search__text" type="search" name="q" placeholder="Search">
-        <input class="search__input search__submit" type="submit" value="Go">
-    </form>
+    <div class="search__form">
+      <form class="search home__form" action="{{ url('find/search-results.html') }}">
+          <input class="search__input search__home" type="search" name="q" placeholder="What Can We help You Find?">
+          <input class="search__input search__submit" type="submit" value="Go">
+      </form>
+    </div>
+  </div>
+  <div class="home__bottom">
+    <h2>Restaurants in Kent, Ohio</h2>
+    {% for entry in craft.entries.section('restaurants') %}
+      <li><a href="{{ entry.url }}">{{ entry.title }}</a></li>
+    {% endfor %}
+    {% for entry in craft.entries.section('news') %}
+      <h2><a href="{{ entry.url }}">{{ entry.title }}</a></h2>
+      <p>{{entry.body}}</p>
+    {% endfor %}
+    <p>Have any questions? Check our our <a href="http://localhost/softwareintegration/public/faq">FAQ Page.</a></p>
   </div>
 
-  <h2>Restaurants in Kent, Ohio</h2>
-  {% for entry in craft.entries.section('restaurants') %}
-    <li><a href="{{ entry.url }}">{{ entry.title }}</a></li>
-  {% endfor %}
-  {% for entry in craft.entries.section('news') %}
-    <h2><a href="{{ entry.url }}">{{ entry.title }}</a></h2>
-    <p>{{entry.body}}</p>
-  {% endfor %}
-  <p>Have any questions? Check our our <a href="http://localhost/softwareintegration/public/faq">FAQ Page.</a></p>
-{% endblock %}
+  {% endblock %}

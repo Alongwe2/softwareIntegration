@@ -26,33 +26,42 @@ header li {
 header li a {
   text-decoration: none;
   display: block;
-  color: white;
+  color: #f1f1f1;
   transition-timing-function: linear;
-  transition-duration: 1.5s;
+  transition-duration: .5s;
 }
-
 header li a:visited {
-  color: white;
+  color: #f1f1f1;
 }
 
 header li a:hover {
   text-decoration: underline;
   transition: 1;
 }
-/*
-.sidenav {
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #111;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
-}*/
+.closebtn {
+  color: white;
+  text-decoration: none;
+  margin-left: 80%;
+  top: .25em;
+  position: absolute;
+  font-size: 1.5em;
+}
 
 @media only screen and (min-width: 500px) {
+
+  .login {
+    border: 2px solid white;
+    border-radius: 8px;
+    padding: 5px;
+  }
+  .login:hover {
+    color: rgb(60, 179, 113);
+    background-color: white;
+  }
+  .login a:hover {
+    color: rgb(60, 179, 113);
+    text-decoration: none;
+  }
   header {
     width: 100%;
     height: 10%;
@@ -65,15 +74,14 @@ header li a:hover {
   header ul {
     flex-direction: row;
   }
-  .closebtn {
-    display: none;
-    color: white;
-    text-decoration: none;
-    margin-left: 90%;
+  .login {
+    margin-top: .5em;
   }
   .openbtn {
     display: none;
   }
+  .closebtn {
+    display: none;
+  }
 
 }
-/* push sidenav */

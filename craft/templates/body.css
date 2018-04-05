@@ -9,6 +9,7 @@ main {
   transition: margin-left .5s;
   padding: 16px;
   overflow: hidden;
+  margin-bottom: 5em;
 }
 p {
   font-weight: normal;
@@ -18,6 +19,10 @@ h1 {
   font-size: 2em;
   font-weight: bold;
   margin-bottom: 1em;
+}
+a {
+  color: rgb(60, 179, 113);
+  text-decoration: none;
 }
 .button {
   background-color: rgb(60, 179, 113);
@@ -75,10 +80,41 @@ h1 {
   margin-bottom: 1em;
 }
 @media only screen and (min-width: 500px) {
+  header {
+    box-shadow: 0px 5px 5px grey;
+  }
   .ratings__left .ratings__right {
     width: 50%;
+  }
+  .home__form {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  .search__home {
+    width: 60%;
+    margin-left: 5%;
+    border-radius: 8px;
+    height: 2.5em;
+    font-weight: 700;
+    padding: 5px;
+
   }
   .ratings {
     flex-direction: row;
   }
+  .home__top {
+    background-color: lightgray;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    padding-top: 8%;
+    text-align: center;
+    align-content: center;
+  }
+  .home__bottom {
+    margin-top: 17%;
+  }
 }
+
+/* homepage */
